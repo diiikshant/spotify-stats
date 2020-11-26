@@ -1,0 +1,48 @@
+@font-face {
+  font-family: gothamBold;
+  src: url(../Gotham-Bold.otf);
+}
+
+.mood-card {
+  border-radius: 15px;
+  background: #6a3093; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #a044ff,
+    #6a3093
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #a044ff,
+    #6a3093
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  box-shadow: 0px 10px 50px #a044ff;
+  padding: 10px;
+}
+
+.main-value {
+  font-family: "gothamBold";
+  color: white;
+  font-size: 10vw;
+}
+
+.header,
+.explainer {
+  font-family: "gothamBold";
+  color: white;
+}
+
+.short-description {
+  font-family: "gothamBold";
+  font-size: 1.5em;
+}
+
+@media (max-width: 500px) {
+  .explainer {
+    font-size: 20px;
+  }
+  .short-description {
+    font-size: 20px;
+  }
+}
