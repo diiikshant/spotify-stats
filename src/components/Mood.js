@@ -4,7 +4,7 @@ import MoodCard from "./MoodCard";
 function Mood({ accessToken }) {
   const [danceability, setDanceability] = useState([]);
   useEffect(() => {
-    fetch("https://api.spotify.com/v1/me/player/recently-played?limit=10", {
+    fetch("https://api.spotify.com/v1/me/player/recently-played?limit=50", {
       headers: {
         Authorization: "Bearer " + accessToken,
       },
@@ -35,7 +35,7 @@ function Mood({ accessToken }) {
     arr.forEach((item) => {
       val += item;
     });
-    return ((val / 10) * 100).toFixed(1);
+    return ((val / 50) * 100).toFixed(1);
   }
 
   const dancePercentage = danceCalc(danceability);

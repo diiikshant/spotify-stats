@@ -16,7 +16,7 @@ function MoodCard({ dance }) {
             <p className="short-description text-justify">
               You like listening to upbeat music you can dance to. Bustling
               clubs or your home, as soon as the song starts your feet start
-              tapping and beforre you know it you are Dancing like there is no
+              tapping and before you know it you are dancing like there is no
               tomorrow. Either that or you just like to dance in your head and
               like imagining things... a lot.
             </p>
