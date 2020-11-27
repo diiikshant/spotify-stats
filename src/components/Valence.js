@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+
+import Chart from "./Chart";
 import "./MoodCard.css";
 function Valence({ songs, accessToken }) {
   const [valence, setValence] = useState([]);
@@ -23,34 +25,39 @@ function Valence({ songs, accessToken }) {
     arr.forEach((item) => {
       val += item;
     });
-    return ((val / 20) * 100).toFixed(1);
+    return ((val / 10) * 100).toFixed(1);
   }
 
   const valencePercentage = valenceCalc(valence);
 
   return (
     <div className="container-fluid">
-      <div className="align-items-center row">
-        <div className="col col-sm">
-          {valencePercentage >= 50 ? (
-            <p className="short-description text-justify">
-              You have been listening to happy, cheerful and/or euphoric songs
-              lately. Thinking of old times or just having a great day? Either
-              way don't forget to smile and enjoy.
-            </p>
-          ) : (
-            <p className="short-description">
-              Low Valence means you like listening to songs that sound sad,
-              depressing or angry. How are you doing?
-            </p>
-          )}
-        </div>
+      <div className="row align-items-center ">
         <div className="mood-card valence col col-sm text-center">
           <h2 className="header">Valence</h2>
           <h1 className="main-value">{valencePercentage}%</h1>
           <h2 className="explainer">
             Valence describes the musical positiveness conveyed by a track.
           </h2>
+        </div>
+        <div className="col col-sm">
+          {valence.length == 10 && <Chart levels={valence} />}
+        </div>
+        <div className="row mt-5">
+          <div className="col col-sm">
+            {valencePercentage >= 50 ? (
+              <p className="short-description text-justify">
+                You have been listening to happy, cheerful and/or euphoric songs
+                lately. Thinking of old times or just having a great day? Either
+                way don't forget to smile and enjoy.
+              </p>
+            ) : (
+              <p className="short-description">
+                Low Valence means you like listening to songs that sound sad,
+                depressing or angry. How are you doing?
+              </p>
+            )}
+          </div>
         </div>
       </div>
     </div>

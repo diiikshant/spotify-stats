@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Chart from "chart.js";
+import Chart from "./Chart";
 import "./MoodCard.css";
 function Danceability({ songs, accessToken }) {
   const [danceability, setDanceability] = useState([]);
@@ -44,6 +44,11 @@ function Danceability({ songs, accessToken }) {
             Danceability describes how suitable a track is for dancing
           </h2>
         </div>
+        <div className="col col-sm">
+          {danceability.length == 10 && <Chart levels={danceability} />}
+        </div>
+      </div>
+      <div className="row mt-5 align-items-center">
         <div className="col col-sm">
           {dancePercentage >= 50 ? (
             <p className="short-description text-justify">

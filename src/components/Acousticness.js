@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Chart from "./Chart";
 import "./MoodCard.css";
 function Acousticness({ songs, accessToken }) {
   const [acousticness, setAcousticness] = useState([]);
@@ -28,14 +29,14 @@ function Acousticness({ songs, accessToken }) {
     arr.forEach((item) => {
       val += item;
     });
-    return ((val / 20) * 100).toFixed(1);
+    return ((val / 10) * 100).toFixed(1);
   }
 
   const acousticnessPercentage = acousticnessCalc(acousticness);
 
   return (
     <div className="container-fluid">
-      <div className="align-items-center row">
+      <div className="row align-items-center">
         <div className="mood-card acoustic col col-sm text-center">
           <h2 className="header">Acousticness</h2>
           <h1 className="main-value">{acousticnessPercentage}%</h1>
@@ -43,6 +44,11 @@ function Acousticness({ songs, accessToken }) {
             Acousticness gives us a measure of whether a track is acoustic.
           </h2>
         </div>
+        <div className="col col-sm">
+          {acousticness.length == 10 && <Chart levels={acousticness} />}
+        </div>
+      </div>
+      <div className="row mt-5">
         <div className="col col-sm">
           {acousticnessPercentage >= 50 ? (
             <p className="short-description text-justify">
