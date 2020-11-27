@@ -1,50 +1,38 @@
 import React, { useState, useEffect } from "react";
-import MoodCard from "./MoodCard";
+import axios from "axios";
+import Danceability from "./Danceability";
+import Valence from "./Valence";
+import Acousticness from "./Acousticness";
 import "./Mood.css";
 
 function Mood({ accessToken }) {
-  const [danceability, setDanceability] = useState([]);
+  const [songs, setSongs] = useState([]);
   useEffect(() => {
-    fetch("https://api.spotify.com/v1/me/player/recently-played?limit=50", {
-      headers: {
-        Authorization: "Bearer " + accessToken,
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => getSong(data.items));
-
-    function getSong(list) {
-      list.forEach((item) => {
-        fetch(`https://api.spotify.com/v1/audio-features/${item.track.id}`, {
+    const fetchItems = async () => {
+      const result = await axios(
+        "https://api.spotify.com/v1/me/player/recently-played?limit=20",
+        {
           headers: {
             Authorization: "Bearer " + accessToken,
           },
-        })
-          .then((response) => response.json())
-          .then((data) =>
-            setDanceability((danceability) => [
-              ...danceability,
-              data.danceability,
-            ])
-          );
-      });
-    }
+        }
+      );
+      setSongs(result.data.items);
+    };
+    fetchItems();
   }, []);
 
-  function danceCalc(arr) {
-    let val = 0;
-    arr.forEach((item) => {
-      val += item;
-    });
-    return ((val / 50) * 100).toFixed(1);
-  }
-
-  const dancePercentage = danceCalc(danceability);
   return (
     <div className="mood-container">
       <h1>What does your listening activity tell about you?</h1>
+      {songs.length !== 0 && (
+        <div>
+          <Danceability songs={songs} accessToken={accessToken} />
+          <Valence songs={songs} accessToken={accessToken} />
+          <Acousticness songs={songs} accessToken={accessToken} />
+        </div>
+      )}
       <hr />
-      <MoodCard dance={dancePercentage} />
     </div>
   );
 }

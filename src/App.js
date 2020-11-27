@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import CardGrid from "./components/CardGrid";
-import Nav from "./components/Nav";
 import Mood from "./components/Mood";
 import queryString from "query-string";
 import "./App.css";

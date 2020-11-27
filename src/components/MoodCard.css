@@ -8,7 +8,25 @@
 }
 .mood-card {
   border-radius: 15px;
-  background: #6a3093; /* fallback for old browsers */
+  box-shadow: 0px 10px 50px #a044ff;
+  padding: 10px;
+}
+
+.dance {
+  background: -webkit-linear-gradient(
+    to right,
+    #93291e,
+    #ed213a
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #93291e,
+    #ed213a
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: #551710;
+}
+
+.valence {
   background: -webkit-linear-gradient(
     to right,
     #a044ff,
@@ -19,14 +37,26 @@
     #a044ff,
     #6a3093
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: #381650;
+}
 
-  box-shadow: 0px 10px 50px #a044ff;
-  padding: 10px;
+.acoustic {
+  background: -webkit-linear-gradient(
+    to right,
+    #f2994a,
+    #f2c94c
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #f2994a,
+    #f2c94c
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  color: #864f1c;
 }
 
 .main-value {
   font-family: "gothamBold";
-  color: white;
   font-size: 10vw;
 }
 
@@ -36,15 +66,22 @@
   color: white;
 }
 
+.explainer {
+  font-size: 20px;
+}
+
 .short-description {
   font-family: "gothamBold";
   font-size: 1.5em;
 }
 
 @media (max-width: 500px) {
-  .explainer {
-    font-size: 20px;
+  .short-description {
+    font-size: 12px;
   }
+}
+
+@media (max-width: 750px) {
   .short-description {
     font-size: 20px;
   }
