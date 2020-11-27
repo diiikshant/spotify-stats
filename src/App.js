@@ -3,26 +3,16 @@ import CardGrid from "./components/CardGrid";
 import Nav from "./components/Nav";
 import Mood from "./components/Mood";
 import queryString from "query-string";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 
 let parsed = queryString.parse(window.location.search);
 
 const App = () => {
   return (
-    <Router>
-      <div className="container">
-        <Nav accessToken={parsed.access_token} />
-        <Switch>
-          <Route path="/" exact>
-            <CardGrid accessToken={parsed.access_token} />
-          </Route>
-          <Route path={`/mood`}>
-            <Mood accessToken={parsed.access_token} />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
+    <div className="container">
+      <CardGrid accessToken={parsed.access_token} />
+      <Mood accessToken={parsed.access_token} />
+    </div>
   );
 };
 

@@ -3,6 +3,9 @@
   src: url(../Gotham-Bold.otf);
 }
 
+.container-fluid {
+  margin: 50px 0px;
+}
 .mood-card {
   border-radius: 15px;
   background: #6a3093; /* fallback for old browsers */

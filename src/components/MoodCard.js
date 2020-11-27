@@ -4,7 +4,7 @@ function MoodCard({ dance }) {
   return (
     <div className="container-fluid">
       <div className="row">
-        <div className="mood-card col col-sm">
+        <div className="mood-card col col-sm text-center">
           <h2 className="header">Danceability</h2>
           <h1 className="main-value">{dance}%</h1>
           <h2 className="explainer">

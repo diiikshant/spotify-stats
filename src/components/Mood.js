@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import MoodCard from "./MoodCard";
+import "./Mood.css";
 
 function Mood({ accessToken }) {
   const [danceability, setDanceability] = useState([]);
@@ -40,7 +41,9 @@ function Mood({ accessToken }) {
 
   const dancePercentage = danceCalc(danceability);
   return (
-    <div>
+    <div className="mood-container">
+      <h1>What does your listening activity tell about you?</h1>
+      <hr />
       <MoodCard dance={dancePercentage} />
     </div>
   );
