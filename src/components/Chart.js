@@ -1,24 +1,27 @@
 import React, { useState, useEffect } from "react";
 import { Line } from "react-chartjs-2";
 
-function Chart({ levels }) {
+function Chart({ levels, color, border, type }) {
   console.log(levels);
   const [chartData, setChartData] = useState({});
   const arr = [];
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 20; i++) {
     arr.push(i + 1);
   }
-  console.log(levels);
   const chart = () => {
     setChartData({
       labels: arr,
       datasets: [
         {
-          label: "level [0-1]",
+          label: [
+            {
+              display: false,
+            },
+          ],
           data: levels,
-          backgroundColor: ["rgba(204, 204, 204, 0.0)"],
+          backgroundColor: [`#${color}`],
           borderWidth: 2,
-          borderColor: ["rgba(43, 43, 43, 0.9)"],
+          borderColor: [`#${border}`],
         },
       ],
     });
@@ -28,7 +31,48 @@ function Chart({ levels }) {
   }, []);
   return (
     <div>
-      <Line data={chartData} />
+      <Line
+        data={chartData}
+        options={{
+          elements: {
+            point: {
+              radius: 0,
+            },
+          },
+          legend: {
+            display: false,
+          },
+          title: {
+            text: `Scale of ${type} of your recently played songs`,
+            display: true,
+          },
+          scales: {
+            yAxes: [
+              {
+                ticks: {
+                  display: false,
+                  autoSkip: true,
+                  maxTicksLimit: 10,
+                  beginAtZero: true,
+                },
+                gridLines: {
+                  display: false,
+                },
+              },
+            ],
+            xAxes: [
+              {
+                ticks: {
+                  display: false,
+                },
+                gridLines: {
+                  display: false,
+                },
+              },
+            ],
+          },
+        }}
+      />
     </div>
   );
 }

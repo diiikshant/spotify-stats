@@ -29,7 +29,7 @@ function Acousticness({ songs, accessToken }) {
     arr.forEach((item) => {
       val += item;
     });
-    return ((val / 10) * 100).toFixed(1);
+    return ((val / 20) * 100).toFixed(1);
   }
 
   const acousticnessPercentage = acousticnessCalc(acousticness);
@@ -45,21 +45,31 @@ function Acousticness({ songs, accessToken }) {
           </h2>
         </div>
         <div className="col col-sm">
-          {acousticness.length == 10 && <Chart levels={acousticness} />}
+          <div className="ml-md-5 mt-4 mt-md-0">
+            {acousticness.length == 20 && (
+              <Chart
+                levels={acousticness}
+                color={"f2c94c"}
+                border={"f2994a"}
+                type={"acousticness"}
+              />
+            )}
+          </div>
         </div>
       </div>
       <div className="row mt-5">
         <div className="col col-sm">
           {acousticnessPercentage >= 50 ? (
             <p className="short-description text-justify">
-              Fingers plucking strings. That's you jam (atleast for now).
+              Fingers plucking strings. That's your jam (atleast for now).
               Perhaps you are Earth sign. Slow to anger, tolerating of other
               people, patient, and empathetic.
             </p>
           ) : (
             <p className="short-description">
-              Low Valence means you like listening to songs that sound sad,
-              depressing or angry. How are you doing?
+              Ahh. Not really interested in listening to Joe playing the guitar,
+              are you? Understandable. Let me just go on a limb here and say you
+              are fire.
             </p>
           )}
         </div>

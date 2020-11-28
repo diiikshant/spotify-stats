@@ -25,7 +25,7 @@ function Valence({ songs, accessToken }) {
     arr.forEach((item) => {
       val += item;
     });
-    return ((val / 10) * 100).toFixed(1);
+    return ((val / 20) * 100).toFixed(1);
   }
 
   const valencePercentage = valenceCalc(valence);
@@ -41,7 +41,16 @@ function Valence({ songs, accessToken }) {
           </h2>
         </div>
         <div className="col col-sm">
-          {valence.length == 10 && <Chart levels={valence} />}
+          <div className="ml-md-5 mt-4 mt-md-0">
+            {valence.length == 20 && (
+              <Chart
+                levels={valence}
+                color={"a044ff"}
+                border={"6a3093"}
+                type={"valence"}
+              />
+            )}
+          </div>
         </div>
         <div className="row mt-5">
           <div className="col col-sm">
@@ -52,7 +61,7 @@ function Valence({ songs, accessToken }) {
                 way don't forget to smile and enjoy.
               </p>
             ) : (
-              <p className="short-description">
+              <p className="short-description text-justify">
                 Low Valence means you like listening to songs that sound sad,
                 depressing or angry. How are you doing?
               </p>

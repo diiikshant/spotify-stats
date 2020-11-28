@@ -45,7 +45,16 @@ function Danceability({ songs, accessToken }) {
           </h2>
         </div>
         <div className="col col-sm">
-          {danceability.length == 10 && <Chart levels={danceability} />}
+          <div className="ml-md-5 mt-4 mt-md-0">
+            {danceability.length == 20 && (
+              <Chart
+                levels={danceability}
+                color={"ed213a"}
+                border={"93291e"}
+                type={"danceability"}
+              />
+            )}
+          </div>
         </div>
       </div>
       <div className="row mt-5 align-items-center">
@@ -61,7 +70,6 @@ function Danceability({ songs, accessToken }) {
           ) : (
             <p className="short-description">
               Ahh... not really got the moves do you? It's okay, I can't dance
-              either. So let's just keep the dancing to your heads{" "}
             </p>
           )}
         </div>
