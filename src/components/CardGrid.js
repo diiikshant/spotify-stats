@@ -17,6 +17,7 @@ const CardGrid = ({ accessToken }) => {
   return (
     <div>
       <h1 className="header-text">Your Most Played Artists</h1>
+      <h1 className="background-text">SCROLL DOWN</h1>
       <div className="cards">
         {artist.map((item, index) => (
           <Card key={index} artist={item} />
