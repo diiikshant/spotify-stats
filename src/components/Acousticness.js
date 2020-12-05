@@ -68,8 +68,8 @@ function Acousticness({ songs, accessToken }) {
           ) : (
             <p className="short-description">
               Ahh. Not really interested in listening to Joe playing the guitar,
-              are you? Understandable. Let me just go on a limb here and say you
-              are fire.
+              are you? Understandable. Maybe you like more sounds and complexity
+              in your music. Perhaps you are more imaginitive and creative.
             </p>
           )}
         </div>

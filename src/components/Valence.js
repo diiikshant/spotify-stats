@@ -63,7 +63,9 @@ function Valence({ songs, accessToken }) {
             ) : (
               <p className="short-description text-justify">
                 Low Valence means you like listening to songs that sound sad,
-                depressing or angry. How are you doing?
+                depressing or angry. Maybe you had a bad day or just like
+                listening to sad songs in general. Research does show that
+                listening to sad songs can help people feel better.
               </p>
             )}
           </div>

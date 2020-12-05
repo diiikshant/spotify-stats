@@ -69,7 +69,9 @@ function Danceability({ songs, accessToken }) {
             </p>
           ) : (
             <p className="short-description">
-              Ahh... not really got the moves do you? It's okay, I can't dance
+              Not really listening to upbeat music are you? If your valence is
+              low then it would mean that you like listening to slow sad songs
+              which indicates that you might not be having the best day.
             </p>
           )}
         </div>

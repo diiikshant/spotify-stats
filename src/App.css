@@ -127,4 +127,7 @@ body {
   .header-text {
     font-size: 2em;
   }
+  .background-text {
+    display: none;
+  }
 }
