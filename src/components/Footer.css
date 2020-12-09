@@ -10,8 +10,7 @@ a {
 }
 
 a:hover {
-  font-size: 1.51em;
-  color: white;
+  color: #1ed760;
   text-decoration: none;
   transition: all 0.3s;
 }

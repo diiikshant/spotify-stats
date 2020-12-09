@@ -35,7 +35,7 @@ function Danceability({ songs, accessToken }) {
   const dancePercentage = danceCalc(danceability);
 
   return (
-    <div className="container-fluid">
+    <div className="container-fluid cardHolder">
       <div className="row align-items-center">
         <div className="mood-card dance col col-sm text-center">
           <h2 className="header">Danceability</h2>

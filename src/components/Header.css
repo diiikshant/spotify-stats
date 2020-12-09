@@ -1,0 +1,20 @@
+.page-header {
+  background-color: #19191a;
+  margin: 0;
+  color: white;
+}
+.nameHead {
+  display: inline-block;
+  margin-left: 10px;
+  margin-bottom: 0;
+}
+
+@media (max-width: 600px) {
+  .nameHead {
+    margin-top: 30px;
+    font-size: 1.2em;
+  }
+  .secondary-text {
+    padding: 10px;
+  }
+}

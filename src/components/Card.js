@@ -19,7 +19,7 @@ function Card({ artist, rank }) {
             width="200"
             height="25"
             scrolling="no"
-            frameborder="0"
+            frameBorder="0"
             allowtransparency="true"
           ></iframe>
         </div>

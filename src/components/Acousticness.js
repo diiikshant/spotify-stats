@@ -35,7 +35,7 @@ function Acousticness({ songs, accessToken }) {
   const acousticnessPercentage = acousticnessCalc(acousticness);
 
   return (
-    <div className="container-fluid">
+    <div className="container-fluid cardHolder">
       <div className="row align-items-center">
         <div className="mood-card acoustic col col-sm text-center">
           <h2 className="header">Acousticness</h2>

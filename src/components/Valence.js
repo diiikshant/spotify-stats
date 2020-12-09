@@ -31,7 +31,7 @@ function Valence({ songs, accessToken }) {
   const valencePercentage = valenceCalc(valence);
 
   return (
-    <div className="container-fluid">
+    <div className="container-fluid cardHolder">
       <div className="row align-items-center ">
         <div className="mood-card valence col col-sm text-center">
           <h2 className="header">Valence</h2>

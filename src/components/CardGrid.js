@@ -15,8 +15,6 @@ const CardGrid = ({ accessToken }) => {
     .then((response) => response.json())
     .then((data) => setArtist(data.items));
 
-  console.log(timeframe);
-
   return (
     <div>
       <h1 className="header-text">Your Most Played Artists</h1>
