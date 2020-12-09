@@ -5,6 +5,7 @@ import "./Header.css";
 function Header({ accessToken }) {
   const [name, setName] = useState("");
   const [flag, setFlag] = useState("");
+  const [uri, setUri] = useState("");
   useEffect(() => {
     const fetchItems = async () => {
       const result = await axios("https://api.spotify.com/v1/me", {
@@ -14,11 +15,10 @@ function Header({ accessToken }) {
       });
       setFlag(result.data.country.toLowerCase());
       setName(result.data.display_name);
+      setUri(result.data.uri);
     };
     fetchItems();
   }, []);
-  console.log(name);
-  console.log(flag);
 
   return (
     <div>
@@ -33,7 +33,9 @@ function Header({ accessToken }) {
               height="12"
               alt={`${flag}`}
             />
-            <h3 className="nameHead">{`Welcome, ${name}.`}</h3>
+            <a href={uri} target="_blank">
+              <h3 className="nameHead">{`Welcome, ${name}.`}</h3>
+            </a>
           </div>
           <div className="col py-md-2 mx-auto secondary-text">
             <a href="https://developer.spotify.com/" target="_blank">
