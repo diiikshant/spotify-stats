@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Line } from "react-chartjs-2";
 
 function Chart({ levels, color, border, type }) {
-  console.log(levels);
   const [chartData, setChartData] = useState({});
   const arr = [];
   for (let i = 0; i < 20; i++) {

@@ -41,6 +41,22 @@ body {
   opacity: 0.1;
 }
 
+.btn {
+  position: relative;
+}
+
+.timeBtn {
+  background-color: white;
+  border-color: black;
+  padding: 5px 20px;
+  margin: 5px 5px;
+}
+.timeBtn:hover {
+  background-color: black;
+  color: white;
+  transition: all 0.3s;
+  font-size: 1.1em;
+}
 .cards {
   margin-top: 2rem;
   display: grid;
@@ -59,7 +75,7 @@ body {
 }
 
 .card h1 {
-  font-size: 20px;
+  font-size: 18px;
   font-family: "gothamBold";
   border-bottom: 1px #fff solid;
   padding-bottom: 10px;
@@ -129,5 +145,9 @@ body {
   }
   .background-text {
     display: none;
+  }
+  .timeBtn {
+    padding: 5px 10px;
+    margin: 5px 5px;
   }
 }

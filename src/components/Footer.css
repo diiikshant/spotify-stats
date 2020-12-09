@@ -1,0 +1,26 @@
+.footer {
+  background-color: #19191a;
+}
+
+.icon {
+  font-size: 1.5em;
+}
+a {
+  color: white;
+}
+
+a:hover {
+  font-size: 1.51em;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+@media (max-width: 600px) {
+  .spotify-link {
+    padding: 1.2em 0;
+  }
+  .socials {
+    padding: 1.2em;
+  }
+}
