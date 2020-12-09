@@ -14,6 +14,14 @@ function Card({ artist, rank }) {
           {artist.genres.slice(0, 3).map((item, index) => (
             <p key={index}>{item}</p>
           ))}
+          <iframe
+            src={`https://open.spotify.com/follow/1/?uri=${artist.uri}&size=basic&theme=light`}
+            width="200"
+            height="25"
+            scrolling="no"
+            frameborder="0"
+            allowtransparency="true"
+          ></iframe>
         </div>
       </div>
     </div>
