@@ -22,6 +22,10 @@ body {
   padding: 0 20px;
 }
 
+.most-played {
+  margin-top: 80px;
+}
+
 .header-text {
   font-family: "gothamBold";
   font-size: 5em;

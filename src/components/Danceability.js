@@ -68,7 +68,7 @@ function Danceability({ songs, accessToken }) {
               like imagining things... a lot.
             </p>
           ) : (
-            <p className="short-description">
+            <p className="short-description text-justify">
               Not really listening to upbeat music are you? If your valence is
               low then it would mean that you like listening to slow sad songs
               which indicates that you might not be having the best day.

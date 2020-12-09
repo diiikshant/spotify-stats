@@ -62,14 +62,18 @@ function Acousticness({ songs, accessToken }) {
           {acousticnessPercentage >= 50 ? (
             <p className="short-description text-justify">
               Fingers plucking strings. That's your jam (atleast for now).
-              Perhaps you are Earth sign. Slow to anger, tolerating of other
-              people, patient, and empathetic.
+              Listening to acoustic music can help you concentrate better. For
+              most people who are working in mentally demanding jobs such as
+              typists, acoustic music is known to help improve concentration.
+              This is because it offers the brain a chance to relax more and, in
+              the process, one is able to think through the task that they are
+              doing with more precision.
             </p>
           ) : (
-            <p className="short-description">
-              Ahh. Not really interested in listening to Joe playing the guitar,
-              are you? Understandable. Maybe you like more sounds and complexity
-              in your music. Perhaps you are more imaginitive and creative.
+            <p className="short-description text-justify">
+              Not really interested in listening to Joe playing the guitar, are
+              you? Understandable. Maybe you like more sounds and complexity in
+              your music. Perhaps you are more imaginitive and creative.
             </p>
           )}
         </div>
